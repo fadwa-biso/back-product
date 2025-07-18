@@ -1,16 +1,10 @@
-const express = require('express');
-// require {'dotenv'}.config();   // eng ali typing way..
-const dotenv = require('dotenv');
-const bcrypt = require('bcryptjs');
-const cors = require('cors');
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
-dotenv.config();
+const express = require("express");
+const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 
 module.exports = [
-    express.json(),
-    express.urlencoded(),
-    cookieParser(),
-    cors(),
-    morgan('dev'),
-]
+  express.json(),
+  express.urlencoded({ extended: true }),
+  cookieParser(),
+  morgan("dev"),
+];
